@@ -4,7 +4,7 @@ class RecordsController < ApplicationController
   # GET /records
   # GET /records.json
   def index
-    @records = Record.all.order('count desc')
+    @records = Record.all.order('count desc').take(100)
   end
 
   # GET /records/1

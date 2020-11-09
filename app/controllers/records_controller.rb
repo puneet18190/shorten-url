@@ -4,7 +4,7 @@ class RecordsController < ApplicationController
   # GET /records
   # GET /records.json
   def index
-    @records = Record.all
+    @records = Record.all.order('count desc')
   end
 
   # GET /records/1
@@ -58,6 +58,16 @@ class RecordsController < ApplicationController
     respond_to do |format|
       format.html { redirect_to records_url, notice: 'Record was successfully destroyed.' }
       format.json { head :no_content }
+    end
+  end
+
+  def search_url
+    record = Record.find_by(shorten_url: params[:id])
+    if record.present?
+      record.update(count: record.count+1)
+      redirect_to record.url
+    else
+      render :json => {:error => "not-found"}.to_json, :status => 404
     end
   end
 

@@ -62,7 +62,8 @@ class RecordsController < ApplicationController
   end
 
   def search_url
-    record = Record.find_by(shorten_url: params[:id])
+    id = Record.decoder(params[:id])
+    record = Record.find_by(id: id)
     if record.present?
       record.update(count: record.count+1)
       redirect_to record.url

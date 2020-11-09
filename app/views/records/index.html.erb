@@ -17,7 +17,7 @@
     <% @records.each do |record| %>
       <tr>
         <td><%= record.url %></td>
-        <% url = request.host_with_port + '/s/' + record.shorten_url %>
+        <% url = request.host_with_port + record.get_shorten_link %>
         <td><%= url %></td>
         <td><%= record.count %></td>
         <td><%= record.title %></td>

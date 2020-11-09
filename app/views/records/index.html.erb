@@ -16,7 +16,7 @@
     <% @records.each do |record| %>
       <tr>
         <td><%= record.url %></td>
-        <td><%= record.sorten_url %></td>
+        <td><%= record.shorten_url %></td>
         <td><%= record.count %></td>
         <td><%= link_to 'Show', record %></td>
         <td><%= link_to 'Edit', edit_record_path(record) %></td>

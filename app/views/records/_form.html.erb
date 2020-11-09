@@ -13,7 +13,7 @@
 
   <div class="field">
     <%= form.label :url %>
-    <%= form.text_field :url %>
+    <%= form.text_field :url, pattern: "https?://.+", required: true, placeholder: 'https://example.com'  %>
   </div>
 
   <div class="actions">

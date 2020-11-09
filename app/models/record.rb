@@ -1,5 +1,7 @@
 class Record < ApplicationRecord
 
+  # Validations
+  validates :url, :shorten_url, presence: true
   validates :url, format: URI::regexp(%w[http https])
 
   before_create :set_shorten_url

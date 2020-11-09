@@ -15,7 +15,7 @@ class RecordsTest < ApplicationSystemTestCase
     click_on "New Record"
 
     fill_in "Count", with: @record.count
-    fill_in "Sorten url", with: @record.sorten_url
+    fill_in "Sorten url", with: @record.shorten_url
     fill_in "Url", with: @record.url
     click_on "Create Record"
 
@@ -28,7 +28,7 @@ class RecordsTest < ApplicationSystemTestCase
     click_on "Edit", match: :first
 
     fill_in "Count", with: @record.count
-    fill_in "Sorten url", with: @record.sorten_url
+    fill_in "Sorten url", with: @record.shorten_url
     fill_in "Url", with: @record.url
     click_on "Update Record"
 

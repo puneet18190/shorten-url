@@ -17,7 +17,7 @@ class RecordsControllerTest < ActionDispatch::IntegrationTest
 
   test "should create record" do
     assert_difference('Record.count') do
-      post records_url, params: { record: { count: @record.count, sorten_url: @record.sorten_url, url: @record.url } }
+      post records_url, params: { record: { count: @record.count, shorten_url: @record.shorten_url, url: @record.url } }
     end
 
     assert_redirected_to record_url(Record.last)
@@ -34,7 +34,7 @@ class RecordsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update record" do
-    patch record_url(@record), params: { record: { count: @record.count, sorten_url: @record.sorten_url, url: @record.url } }
+    patch record_url(@record), params: { record: { count: @record.count, shorten_url: @record.shorten_url, url: @record.url } }
     assert_redirected_to record_url(@record)
   end
 

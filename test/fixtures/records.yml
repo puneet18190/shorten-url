@@ -1,11 +1,11 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  url: MyString
-  sorten_url: MyString
-  count: 1
+  url: 'http://google.com'
+  shorten_url: ''
+  count: 0
 
 two:
-  url: MyString
-  sorten_url: MyString
-  count: 1
+  url: 'http://abc.com'
+  shorten_url: ''
+  count: 0

@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Url:</strong>
+  <%= @record.url %>
+</p>
+
+<p>
+  <strong>Sorten url:</strong>
+  <%= @record.sorten_url %>
+</p>
+
+<p>
+  <strong>Count:</strong>
+  <%= @record.count %>
+</p>
+
+<%= link_to 'Edit', edit_record_path(@record) %> |
+<%= link_to 'Back', records_path %>

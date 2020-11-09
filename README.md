@@ -1,24 +1,29 @@
-# README
+# Getting Started with Shorten Url
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Follow these steps to run app locally:
 
-Things you may want to cover:
+```shell
+rvm install 2.6.3
+```
 
-* Ruby version
+```
+git clone https://github.com/puneet18190/shorten-url.git
+```
 
-* System dependencies
+```
+rake db:create
+```
 
-* Configuration
+```
+rake db:migrate
+```
 
-* Database creation
+```
+rails server
+```
 
-* Database initialization
+# To run test:
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+```
+rails test
+```

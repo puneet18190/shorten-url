@@ -45,4 +45,19 @@ class RecordsControllerTest < ActionDispatch::IntegrationTest
 
     assert_redirected_to records_url
   end
+
+  test "should redirect to original url using shorten url" do
+    @record = Record.create(url: 'https://abc.com')
+    get @record.get_shorten_link
+    assert_response :redirect
+    assert_redirected_to @record.url
+    assert_equal @response.code, "302"
+  end
+
+  test "should increase click count after open shorten url" do
+    @record = Record.create(url: 'https://abc.com')
+    original_count = @record.count
+    get @record.get_shorten_link
+    assert_equal original_count+1, Record.find(@record.id).count
+  end
 end

@@ -7,7 +7,7 @@
 
 <p>
   <strong>Sorten url:</strong>
-  <%= @record.shorten_url %>
+  <%= request.host_with_port + @record.get_shorten_link %>
 </p>
 
 <p>
